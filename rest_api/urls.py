@@ -6,5 +6,6 @@ app_name = 'api'
 
 urlpatterns = [
     path('home/', home , name='home'),
-    path('krosovkaMakeAPI/', krosovkaMakeAPI, name='krosovkaMakeAPI')
+    path('krosovka-api/', krosovkaMakeAPI),
+    path('krosovka-api/<int:pk>/', singleAPI),
 ]
