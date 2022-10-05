@@ -45,3 +45,12 @@ def malumotUpdate(request, pk):
         serializer.save()
     
     return Response(serializer.data)
+
+#post delete qilish,(ma'lumot delete qilish)
+@api_view(["DELETE"])
+@permission_classes((permissions.AllowAny, ))
+def malumotDelete(request, pk):
+    krosovka = Krosovka.objects.get(id=pk)
+    krosovka.delete()
+    
+    return Response("Muvaffaqiyatli o'chirildi")
